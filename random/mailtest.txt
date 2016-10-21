@@ -1,0 +1,23 @@
+Subject: Flight Change
+From: customer service <cs@mycompany.com>
+to: xxx@gmail.com
+X-Priority: 1 (Highest)
+X-MSMail-Priority: High
+MIME-Version: 1.0
+content-Type: multipart/alternative; boundary=94eb2c043cfe84e00e053f63d6f2
+
+--94eb2c043cfe84e00e053f63d6f2
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<title>Fligt Change</title>
+</head>
+We are sorry to inform you that fligh <B>BA1234</B> has been canceld. We have booked you on the next available flight which is <B>BA4321</B> which will depart at 1820 from gate B12.
+<br>
+<br>
+For more information you can contact our service desk or check our website <a href="http://www.britishairways.com/"> britishairways.com</a>
+<body>
+</body>
+</html>

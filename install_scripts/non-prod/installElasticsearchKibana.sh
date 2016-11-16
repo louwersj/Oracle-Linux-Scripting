@@ -39,7 +39,7 @@ function configureYum {
 
        echo "elastic repo"
        echo "" >> /etc/yum.repos.d/public-yum-ol6.repo
-       echo "[kibana-5.x]" >> /etc/yum.repos.d/public-yum-ol6.repo
+       echo "[elastic]" >> /etc/yum.repos.d/public-yum-ol6.repo
        echo "name=Kibana repository for 5.x packages" >> /etc/yum.repos.d/public-yum-ol6.repo
        echo "baseurl=https://artifacts.elastic.co/packages/5.x/yum" >> /etc/yum.repos.d/public-yum-ol6.repo
        echo "gpgcheck=1" >> /etc/yum.repos.d/public-yum-ol6.repo

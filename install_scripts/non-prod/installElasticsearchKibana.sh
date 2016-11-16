@@ -84,7 +84,8 @@ function installKibana {
 
 function configureKibana {
    echo "configure kibana to listen external"  
-   cat /etc/kibana/kibana.yml | sed -e 's/#server.host: "localhost"/server.host: "0.0.0.0"/' >> /tmp/kibana/kibana.yml.tmp
+   touch /tmp/kibana.yml.tmp
+   cat /etc/kibana/kibana.yml | sed -e 's/#server.host: "localhost"/server.host: "0.0.0.0"/' >> /tmp/kibana.yml.tmp
    rm  /etc/kibana/kibana.yml
    touch /etc/kibana/kibana.yml
    cat /tmp/kibana.yml.tmp >> /etc/kibana/kibana.yml  
@@ -93,6 +94,7 @@ function configureKibana {
 
  function configureElasticsearch {
   echo "configure elastic to listen external"  
+   touch /tmp/elasticsearch.yml.tmp
    cat /etc/elasticsearch/elasticsearch.yml | sed -e 's/#server.host: "localhost"/server.host: "0.0.0.0"/' >> /tmp/elasticsearch.yml.tmp
    rm  /etc/elasticsearch/elasticsearch.yml
    touch /etc/elasticsearch/elasticsearch.yml

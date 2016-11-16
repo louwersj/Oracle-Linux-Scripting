@@ -95,7 +95,7 @@ function configureKibana {
  function configureElasticsearch {
   echo "configure elastic to listen external"  
    touch /tmp/elasticsearch.yml.tmp
-   cat /etc/elasticsearch/elasticsearch.yml | sed -e 's/#server.host: "localhost"/server.host: "0.0.0.0"/' >> /tmp/elasticsearch.yml.tmp
+   cat /etc/elasticsearch/elasticsearch.yml | sed -e 's/#server.host: 192.168.0.1/server.host: "0.0.0.0"/' >> /tmp/elasticsearch.yml.tmp
    rm  /etc/elasticsearch/elasticsearch.yml
    touch /etc/elasticsearch/elasticsearch.yml
    cat /tmp/elasticsearch.yml.tmp >> /etc/elasticsearch/elasticsearch.yml   

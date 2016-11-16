@@ -59,6 +59,8 @@ function installElasticsearch {
        echo "installing elasticsearch"
        yum -y install elasticsearch
 
+       configureElasticsearch
+
        startElasticsearch
    fi
 }
@@ -73,9 +75,29 @@ function installKibana {
        echo "installing kibana"
        yum -y install kibana
 
+       configureKibana
+
        startKibana
    fi
 }
+
+
+function configureKibana {
+   echo "configure kibana to listen external"  
+   cat /etc/kibana/kibana.yml | sed -e 's/#server.host: "localhost"/server.host: "0.0.0.0"/' >> /tmp/kibana/kibana.yml.tmp
+   rm  /etc/kibana/kibana.yml
+   touch /etc/kibana/kibana.yml
+   cat /tmp/kibana/kibana.yml.tmp >> /etc/kibana/kibana.yml  
+}
+
+
+ function configureElasticsearch {
+  echo "configure elastic to listen external"  
+   cat /etc/elasticsearch/elasticsearch.yml | sed -e 's/#server.host: "localhost"/server.host: "0.0.0.0"/' >> /tmp/elasticsearch.yml.tmp
+   rm  /etc/elasticsearch/elasticsearch.yml
+   touch /etc/elasticsearch/elasticsearch.yml
+   cat /tmp/elasticsearch.yml.tmp >> /etc/elasticsearch/elasticsearch.yml   
+ }
 
 
 function startElasticsearch {

@@ -87,7 +87,7 @@ function configureKibana {
    cat /etc/kibana/kibana.yml | sed -e 's/#server.host: "localhost"/server.host: "0.0.0.0"/' >> /tmp/kibana/kibana.yml.tmp
    rm  /etc/kibana/kibana.yml
    touch /etc/kibana/kibana.yml
-   cat /tmp/kibana/kibana.yml.tmp >> /etc/kibana/kibana.yml  
+   cat /tmp/kibana.yml.tmp >> /etc/kibana/kibana.yml  
 }
 
 

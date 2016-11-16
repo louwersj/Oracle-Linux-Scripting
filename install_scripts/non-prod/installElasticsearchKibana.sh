@@ -43,9 +43,9 @@ function installElasticsearch {
        echo "elasticsearch is already installed"
    else
        echo "importing elastic GPG key"
-       rpm --rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
+       rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 
-       echo "adding kibana repository to yum"
+       echo "elastic repo"
        echo "" >> /etc/yum.repos.d/public-yum-ol6.repo
        echo "[kibana-5.x]" >> /etc/yum.repos.d/public-yum-ol6.repo
        echo "name=Kibana repository for 5.x packages" >> /etc/yum.repos.d/public-yum-ol6.repo

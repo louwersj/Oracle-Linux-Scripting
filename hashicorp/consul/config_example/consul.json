@@ -1,0 +1,9 @@
+{
+  "datacenter": "private_dc",
+  "data_dir": "/tmp/consul3",
+  "log_level": "INFO",
+  "node_name": "consul_0",
+  "server": true,
+  "bind_addr": "127.0.0.1",
+  "bootstrap_expect": 1
+}

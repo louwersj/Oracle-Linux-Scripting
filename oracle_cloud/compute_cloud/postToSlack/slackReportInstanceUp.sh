@@ -1,18 +1,16 @@
-#!/usr/bin/env bash
 #!/bin/bash
 # NAME:
 #  slackReportInstanceUp.sh 
 #
 # DESC:
-#  To be used to install a nginx server in a very quick and dirty manner.
-#  This is only for building a quick and dirty test/dev server and you should
-#  never .... never never never .... use this for a production setup. 
-#  You will need nginx-1.8.1-1.el7.ngx.x86_64.rpm which can be downloaded 
-#  from the NGINX website. You need to ensure that this file is in the same 
-#  directory as this script to make the script work. 
+#  To be used in combination with opc-init. The script will report
+#  when a newly created instance is up on the Oracle Compute Cloud
+#  into a slack channel. The information to be able to connect to
+#  the right slack channel needs to be included in the userdata
+#  part of the orchestration JSON file when created a new instance
 #
-# This script is tested for Oracle Linux.
-#
+#  This script is tested for Oracle Linux in combination with the 
+#  Oracle public cloud / compute cloud.
 #
 # LOG:
 # VERSION---DATE--------NAME-------------COMMENT

@@ -1,0 +1,8 @@
+{
+	"slack_code": "XXXXXXXXX/XXXXXXXXX/XXXXXXXXXXXXXXXXXXXX",
+	"slack_channel": "general",
+    "pre-bootstrap": {
+                      "scriptURL": "https://github.com/louwersj/Oracle-Linux-Scripting/raw/master/oracle_cloud/compute_cloud/postToSlack/slackReportInstanceUp.sh",
+                      "failonerror": true
+         }	  
+}

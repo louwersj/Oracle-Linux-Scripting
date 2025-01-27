@@ -36,8 +36,8 @@ newRepoId=$(cat /proc/sys/kernel/random/uuid | awk '{print toupper($0)}')
 
 # Uncomment and run the following to fork the repo
 echo $2 | gh auth login --with-token
-gh repo fork "$1" --fork-name "PR_$newRepoId" --remote=false --clone=false
-gh auth logout 
+gh repo fork "$1" --fork-name "PR_$newRepoId" --remote=false --clone=false > /dev/null 2>&1
+gh auth logout > /dev/null 2>&1
 
 #print the fork name
 echo "PR_$newRepoId"

@@ -19,7 +19,7 @@ fi
 
 # use apk to install additional packages
 apk add --no-cache --quiet curl tar ca-certificates
-
+apk add --no-cache --quiet git
 
 # make sure we have the github cli present
 cd /tmp

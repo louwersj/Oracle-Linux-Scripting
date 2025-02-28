@@ -19,11 +19,19 @@ find_python_files() {
         esac
 
         base_name=$(basename "$file")
+        lower_base_name=$(echo "$base_name" | tr '[:upper:]' '[:lower:]')
+        
         for exclude in $exclude_list; do
             if [ "$base_name" = "$exclude" ]; then
                 continue 2  # Skip this file and move to the next one
             fi
         done
+
+        # Case-insensitive exclusion for files starting with GeeksforGeeks or Leetcode
+        case "$lower_base_name" in
+            geeksforgeeks*|leetcode*) continue ;; 
+        esac
+        
         echo "$file"
     done
 }

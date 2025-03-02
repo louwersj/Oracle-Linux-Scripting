@@ -4,7 +4,7 @@
 find_python_files() {
     dir="$1"
     exclude_list="__init__.py conftest.py setup.py"
-    special_chars='[!@#$%^&*(){}\[\];:"\'\\|~`<>?,]'
+    special_chars='[!@#$%^&*(){}\[\];:"\'"'"'\\|~`<>?,]'
 
     # Check if the directory exists
     if [ ! -d "$dir" ]; then

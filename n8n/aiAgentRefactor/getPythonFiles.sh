@@ -4,6 +4,7 @@
 find_python_files() {
     dir="$1"
     exclude_list="__init__.py conftest.py setup.py"
+    special_chars='[!@#$%^&*(){}\[\];:"\'\\|~`<>?,]'
 
     # Check if the directory exists
     if [ ! -d "$dir" ]; then
@@ -21,6 +22,11 @@ find_python_files() {
         base_name=$(basename "$file")
         lower_base_name=$(echo "$base_name" | tr '[:upper:]' '[:lower:]')
         
+        # Skip files with special characters in their name
+        if echo "$base_name" | grep -qE "$special_chars"; then
+            continue
+        fi
+
         for exclude in $exclude_list; do
             if [ "$base_name" = "$exclude" ]; then
                 continue 2  # Skip this file and move to the next one
